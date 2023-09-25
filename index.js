@@ -179,3 +179,29 @@ products.forEach((element) => {
 });
 
 // Task4
+const products4 = [
+  {
+    id: 3,
+    price: 127,
+    photos: ["1.jpg", "2.jpg"],
+  },
+  {
+    id: 5,
+    price: 499,
+    photos: [],
+  },
+  {
+    id: 10,
+    price: 26,
+    photos: ["3.jpg"],
+  },
+];
+
+console.log(
+  products4.forEach((element) => {
+    asArray = Object.values(element);
+    asArray[2].filter(function (el) {
+      return el > 0;
+    });
+  })
+);
