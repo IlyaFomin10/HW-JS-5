@@ -195,13 +195,35 @@ const products4 = [
     price: 26,
     photos: ["3.jpg"],
   },
+  {
+    id: 8,
+    price: 78,
+  },
 ];
 
+let productsWithPhotoKey = products4.filter((p) => {
+  if (Object.keys(p).includes("photos")) {
+    return true;
+  }
+  return false;
+});
+
+let productsWithPhoto = productsWithPhotoKey.filter((p) => {
+  if (p.photos.length < 1) {
+    return false;
+  }
+  return true;
+});
+console.log(productsWithPhoto);
+
 console.log(
-  products4.forEach((element) => {
-    asArray = Object.values(element);
-    asArray[2].filter(function (el) {
-      return el > 0;
-    });
+  products4.sort(function (a, b) {
+    if (a.price > b.price) {
+      return 1;
+    }
+    if (a.price < b.price) {
+      return -1;
+    }
+    return 0;
   })
 );
